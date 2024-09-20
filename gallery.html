@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <style>
+        /* Normalize CSS */
+        @import url(https://fonts.googleapis.com/css?family=Nunito+Sans);
+        @import url(https://fonts.googleapis.com/css?family=Rubik);
+
+        html {
+            line-height: 1.15;
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-size: 100%;
+            line-height: 1.5;
+            color: #555;
+            font-family: 'Nunito Sans', sans-serif;
+            display: flex;
+            flex-direction: column; /* Stack elements vertically */
+            align-items: center; /* Center items horizontally */
+        }
+
+        @keyframes blink {
+            0% { color: rgb(255, 0, 0); } /* Red */
+            25% { color: rgb(0, 255, 0); } /* Green */
+            50% { color: rgb(0, 0, 255); } /* Blue */
+            75% { color: rgb(255, 255, 0); } /* Yellow */
+            100% { color: rgb(255, 0, 255); } /* Magenta */
+        }
+
+        h1 {
+            font-weight: bold; /* Make the text bold */
+            font-size: 2.5rem; /* Set a larger font size */
+            margin: 20px 0; /* Add margin for spacing */
+            text-align: center; /* Center the text */
+            animation: blink 1.5s infinite; /* Apply the blinking animation */
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap; /* Allow wrapping of images */
+            justify-content: center; /* Center images horizontally */
+            max-width: 1200px; /* Set a maximum width for the gallery */
+            margin-bottom: 20px; /* Add space below the gallery */
+        }
+
+        .gallery img {
+            width: calc(33.33% - 20px); /* Responsive width with space for margins */
+            height: auto; /* Maintain aspect ratio */
+            object-fit: cover;
+            margin: 10px; /* Margin around images */
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        p {
+            text-align: center; /* Center-aligns the paragraph */
+            max-width: 800px; /* Sets a maximum width for better readability */
+            margin: 20px auto; /* Centers the paragraph with auto margins */
+            padding: 15px; /* Adds padding around the paragraph */
+            background-color: #f9f9f9; /* Light background color for contrast */
+            border: 1px solid #e0e0e0; /* Subtle border for definition */
+            border-radius: 8px; /* Rounded corners for a softer look */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+            font-family: 'Rubik', sans-serif; /* Change font family for better aesthetics */
+            font-size: 1.1rem; /* Slightly larger font size for readability */
+            line-height: 1.6; /* Increased line height for better spacing between lines */
+            color: #333; /* Darker text color for better contrast against the background */
+        }
+
+        @media (max-width: 768px) {
+          .gallery img {
+              width: calc(50% - 20px); /* Two images per row on smaller screens */
+          }
+        }
+
+        @media (max-width: 480px) {
+          .gallery img {
+              width: calc(100% - 20px); /* One image per row on very small screens */
+          }
+        }
+    </style>
+</head>
+<body>
+
+<h1>Image Gallery</h1>
+
+<div class="gallery">
+    <img src="assets/img/jpg/1684567839566.jpeg" alt="Image 1">
+    <p>Had the great opportunity in visiting NASA - National Aeronautics and Space Administration, Houston, on a visit to the United States. The space center is indeed a center of attention for tourists who visit the United States. Thanks to NASA for depicting all your missions and strategies at this great hall of fame!</p>
+
+    <img src="assets/img/jpg/1684146860744.jpeg" alt="Image 2">
+    <p>Had met with so many connections attending the GDSC Summit held at Rajagiri School of Engineering & Technology, Kochi.</p>
+
+    <!-- Add more images as needed -->
+</div>
+
+</body>
+</html>
