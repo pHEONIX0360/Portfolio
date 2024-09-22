@@ -5188,4 +5188,123 @@ a img {
   .btn:active {
     color: #000;
     font-weight: bold;
+}
+
+  
+.container {
+    position: absolute;
+    width: 100%;
+    height: 500px; /* Set the height of the container */
+    overflow: hidden; /* Prevent overflow */
+    animation: moveContainer 10s linear infinite;
+    pointer-events: none; /* Ensure the container does not affect underlying elements */
+    z-index: -1; /* Place the container behind other elements */
+}
+
+@keyframes moveContainer {
+    0% {
+        top: 0;
+        left: 0;
+    }
+    25% {
+        top: 0;
+        left: calc(100% - 100%);
+    }
+    50% {
+        top: calc(100% - 500px);
+        left: calc(100% - 100%);
+    }
+    75% {
+        top: calc(100% - 500px);
+        left: 0;
+    }
+    100% {
+        top: 0;
+        left: 0;
+    }
+}
+  
+.btn1 {
+    padding: 10px 20px; /* Smaller size */
+    border: none;
+    outline: none;
+    color: rgb(0, 0, 0);
+    background-color: linear-gradient(
+        45deg,
+        #FF0000, #FF7300, #FFFB00, #48FF00,
+        #00FFD5, #002BFF, #FF00C8, #FF0000
+       );;
+    cursor: pointer;
+    position: absolute; /* Positioning relative to the parent div */
+    z-index: 1000; /* Ensure it's on top of other elements */
+    border-radius: 12px;
+  }
+  
+  .btn1::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color:linear-gradient(
+        45deg,
+        #FF0000, #FF7300, #FFFB00, #48FF00,
+        #00FFD5, #002BFF, #FF00C8, #FF0000
+       );;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+  }
+  
+  .btn1::before {
+    content: "";
+    background: linear-gradient(
+      45deg,
+      #FF0000, #FF7300, #FFFB00, #48FF00,
+      #00FFD5, #002BFF, #FF00C8, #FF0000
+     );
+     position: absolute;
+     top: -2px;
+     left: -2px;
+     background-size: 600%;
+     z-index: -1;
+     width: calc(100% + 4px);
+     height: calc(100% + 4px);
+     filter: blur(8px);
+     animation: glowing 20s linear infinite;
+     transition: opacity .3s ease-in-out;
+     border-radius: 10px;
+     opacity: 0;
+  }
+  
+  @keyframes glowing {
+     0% {background-position: 0 0;}
+     50% {background-position: 400% 0;}
+     100% {background-position: 0 0;}
+  }
+  
+  .btn1:hover::before {
+     opacity: 1;
+     background-color: linear-gradient(
+        45deg,
+        #FF0000, #FF7300, #FFFB00, #48FF00,
+        #00FFD5, #002BFF, #FF00C8, #FF0000
+       );;
+  }
+  
+  .btn1:active::after {
+     background:linear-gradient(
+        45deg,
+        #FF0000, #FF7300, #FFFB00, #48FF00,
+        #00FFD5, #002BFF, #FF00C8, #FF0000
+       );;
+  }
+  
+  .btn1:active {
+     color: linear-gradient(
+        45deg,
+        #FF0000, #FF7300, #FFFB00, #48FF00,
+        #00FFD5, #002BFF, #FF00C8, #FF0000
+       );;
+     font-weight: bold;
   }
